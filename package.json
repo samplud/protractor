@@ -1,0 +1,21 @@
+{
+    "name": "qa-protractor",
+    "version": "1.0.0",
+    "description": "Learning UI automation test",
+    "main": "index.js",
+    "license": "ISC",
+    "author": "robbytin08",
+    "scripts": {
+        "test-e2e": "protractor conf/conf.js",
+        "reports": "allure serve allure-results/",
+        "show-bug": "open ProtractorTestReport.html"
+    },
+    "devDependencies": {
+        "protractor-jasmine2-screenshot-reporter": "^0.5.0"
+    },
+    "dependencies": {
+        "allure-commandline": "^2.13.0",
+        "jasmine-allure-reporter": "^1.0.2",
+        "protractor-html-reporter-2": "^1.0.4"
+    }
+}

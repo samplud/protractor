@@ -1,0 +1,60 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }li img { max-width: 100%; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display === "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;if (failedSpecs.length > 0) { document.getElementById("quickLinksHeader").textContent = "Quicklink of Failure"}for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>demo calculator test (22 s)</h4><li id="4e476390-e659-11e9-96b1-9776c8e641ad" class="passed" data-spec="spec0" data-name="@testAdd addation test" data-browser="chrome"><span class="passed">&#10003;</span><a href="4bf0f3681f0239182f50bf9bf61992c3.png">@testAdd addation test</a>(7 s)</li><li id="4e47b1b0-e659-11e9-96b1-9776c8e641ad" class="passed" data-spec="spec1" data-name="@testdiv division test" data-browser="chrome"><span class="passed">&#10003;</span><a href="6d7bfb2f0c5749367c617c75093b5b88.png">@testdiv division test</a>(8 s)</li><li id="4e47b1b1-e659-11e9-96b1-9776c8e641ad" class="failed" data-spec="spec2" data-name="@bug only xample bugs application | 12 : 6 Expected result 2" data-browser="chrome"><span class="failed">&#10007;</span><a href="039e2de3c285eb4566e3cce15ff1a5f7.png">@bug only xample bugs application | 12 : 6 Expected result 2</a>(7 s)<ul><li>Expected &#39;10:43:53 AM&#39; to equal &#39;10&#39;. [<a href="javascript:showhide('spec2-MacOSX-chrome-77.0.3865.900')">stack</a>]<br/><span style="display: none" id="spec2-MacOSX-chrome-77.0.3865.900" class="stacktrace">Error: Failed expectation
+    at homepage.verifyResult (/Users/macbookair/git/qa_protractor/pages/homepage.js:38:34)
+    at UserContext.&lt;anonymous&gt; (/Users/macbookair/git/qa_protractor/test/calculator.js:46:18)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2927:27</span></li></ul></li></ul><ul style="list-style-type:none"><h4>angularjs homepage (14 s)</h4><li id="4e47ffd0-e659-11e9-96b1-9776c8e641ad" class="passed" data-spec="spec3" data-name="should greet the named user" data-browser="chrome"><span class="passed">&#10003;</span><a href="ed7a16a822ba2a761835a999f10ba3ee.png">should greet the named user</a>(6 s)</li><ul style="list-style-type:none"><h4>todo list (7 s)</h4><li id="4e4826e0-e659-11e9-96b1-9776c8e641ad" class="passed" data-spec="spec4" data-name="should list todos" data-browser="chrome"><span class="passed">&#10003;</span><a href="3f26d5db82422081e181fd5048f303e5.png">should list todos</a>(4 s)</li><li id="4e4826e1-e659-11e9-96b1-9776c8e641ad" class="passed" data-spec="spec5" data-name="should add a todo" data-browser="chrome"><span class="passed">&#10003;</span><a href="d392891cf49ea9b873ee0399dc9b087a.png">should add a todo</a>(4 s)</li></ul></ul><ul style="list-style-type:none"><h4>POC seller panel (33 s)</h4><li id="4e4826e2-e659-11e9-96b1-9776c8e641ad" class="failed" data-spec="spec6" data-name="@seller addation test" data-browser="chrome"><span class="failed">&#10007;</span><a href="ebbc4b6fc705d1a6c1cfc801d0b84ebc.png">@seller addation test</a>(33 s)<ul><li>Failed: script timeout
+  (Session info: chrome=77.0.3865.90)
+  (Driver info: chromedriver=77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}),platform=Mac OS X 10.14.6 x86_64) [<a href="javascript:showhide('spec6-MacOSX-chrome-77.0.3865.900')">stack</a>]<br/><span style="display: none" id="spec6-MacOSX-chrome-77.0.3865.900" class="stacktrace">ScriptTimeoutError: script timeout
+  (Session info: chrome=77.0.3865.90)
+  (Driver info: chromedriver=77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}),platform=Mac OS X 10.14.6 x86_64)
+    at Object.checkLegacyResponse (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/error.js:546:15)
+    at parseHttpResponse (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/http.js:509:13)
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/http.js:441:30
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Protractor.waitForAngular() - Locator: By(css selector, [ng-click=&quot;vm.close()&quot;])
+    at Driver.schedule (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver.js:807:17)
+    at ProtractorBrowser.executeAsyncScript_ (/usr/local/lib/node_modules/protractor/built/browser.js:425:28)
+    at /usr/local/lib/node_modules/protractor/built/browser.js:456:33
+    at ManagedPromise.invokeCallback_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2927:27
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (/usr/local/lib/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.&lt;computed&gt; [as click] (/usr/local/lib/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.&lt;computed&gt; [as click] (/usr/local/lib/node_modules/protractor/built/element.js:831:22)
+    at seller.closeAdds (/Users/macbookair/git/qa_protractor/pages/seller_panel.js:30:19)
+    at UserContext.&lt;anonymous&gt; (/Users/macbookair/git/qa_protractor/test/seller_panel_test.js:20:16)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+From: Task: Run it(&quot;@seller addation test&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at QueueRunner.execute (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:909:35)
+    at Spec.execute (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:526:10)
+    at UserContext.fn (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:5340:37)
+    at attempt (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at QueueRunner.execute (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4199:10)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/macbookair/git/qa_protractor/test/seller_panel_test.js:4:5)
+    at addSpecsToSuite (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/macbookair/git/qa_protractor/test/seller_panel_test.js:3:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)</span></li></ul></li></ul><a href="javascript:showhide('4e484df0-e659-11e9-96b1-9776c8e641ad')">Toggle Configuration</a><div class="config" id="4e484df0-e659-11e9-96b1-9776c8e641ad" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.8.0</li><li>Browser name:  chrome</li><li>Browser version:  77.0.3865.90</li><li>Platform:  Mac OS X</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div></body></html>
