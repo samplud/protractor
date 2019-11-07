@@ -1,6 +1,7 @@
 let seller = function () {
 
     let buttonLogin = element(by.className('btn btn-secondary btn-block'));
+    let name_input = element(by.id('name'));
     let email_input = element(by.id('email'));
     let password_input = element(by.id('password'));
     let buttonGoLogin = element(by.className('btn btn-primary btn-block'))
@@ -12,6 +13,10 @@ let seller = function () {
 
     this.buttonLogin = function () {
         buttonLogin.click();
+    };
+
+    this.enterName = function (name) {
+        name_input.sendKeys(name)
     };
 
     this.enterEmail = function (email) {
