@@ -1,9 +1,8 @@
 let seller = function () {
 
-    let buttonLogin = element(by.className('btn btn-secondary btn-block'));
-    let name_input = element(by.id('name'));
-    let email_input = element(by.id('email'));
-    let password_input = element(by.id('password'));
+    let nameInput = element(by.id('name'));
+    let emailInput = element(by.id('email'));
+    let passwordInput = element(by.id('password'));
     let buttonGoLogin = element(by.className('btn btn-primary btn-block'))
     let closeAdds = element(by.css('[ng-click="vm.close()"]'));
 
@@ -11,20 +10,16 @@ let seller = function () {
         browser.get(url)
     };
 
-    this.buttonLogin = function () {
-        buttonLogin.click();
-    };
-
     this.enterName = function (name) {
-        name_input.sendKeys(name)
+        nameInput.sendKeys(name)
     };
 
     this.enterEmail = function (email) {
-        email_input.sendKeys(email)
+        emailInput.sendKeys(email)
     };
 
     this.enterPassword = function (pwd) {
-        password_input.sendKeys(pwd)
+        passwordInput.sendKeys(pwd)
     };
 
     this.buttonGoLogin = function () {
@@ -38,9 +33,12 @@ let seller = function () {
     this.verifyResult = function (result) {
         let output = element(by.cssContainingText('.ng-binding', result));
         expect(output.getText()).toEqual(result)
+    };
+
+    this.verifyKonfirmasi = function (konfirmasi) {
+        let verifyKonfirmasi = element(by.css('.div.content > h1', konfirmasi));
+        expect(verifyKonfirmasi.getText()).toEqual(konfirmasi);
     }
-
-
 };
 
 module.exports = new seller();

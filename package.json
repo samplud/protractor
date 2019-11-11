@@ -16,6 +16,7 @@
     "dependencies": {
         "allure-commandline": "^2.13.0",
         "jasmine-allure-reporter": "^1.0.2",
-        "protractor-html-reporter-2": "^1.0.4"
+        "protractor-html-reporter-2": "^1.0.4",
+        "randomstring": "^1.1.5"
     }
 }
